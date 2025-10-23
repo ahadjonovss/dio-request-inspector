@@ -1,4 +1,5 @@
 import 'package:dio_request_inspector/src/common/extensions.dart';
+import 'package:dio_request_inspector/src/page/dashboard/widget/custom_text.dart';
 import 'package:flutter/material.dart';
 
 class ItemRow extends StatelessWidget {
@@ -26,7 +27,7 @@ class ItemRow extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        const Text(
+        const CustomText(
           "Headers :",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
@@ -42,7 +43,7 @@ class ItemRow extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
+        CustomText(
           name,
           style: const TextStyle(fontWeight: FontWeight.bold),
         ),
@@ -51,7 +52,7 @@ class ItemRow extends StatelessWidget {
         ),
         Flexible(
           child: value != null
-              ? Text(
+              ? CustomText(
                   value!,
                 )
               : const SizedBox(),

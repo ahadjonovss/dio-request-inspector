@@ -1,6 +1,7 @@
 import 'package:dio_request_inspector/src/common/enum.dart';
 import 'package:dio_request_inspector/src/common/storage.dart';
 import 'package:dio_request_inspector/src/model/http_activity.dart';
+import 'package:dio_request_inspector/src/page/dashboard/widget/custom_text.dart';
 import 'package:dio_request_inspector/src/page/dashboard/widget/item_response_widget.dart';
 import 'package:dio_request_inspector/src/page/dashboard/widget/password_protection_dialog.dart';
 import 'package:dio_request_inspector/src/page/detail/detail_page.dart';
@@ -155,15 +156,15 @@ class _DashboardPageState extends State<DashboardPage> {
               return [
                 const PopupMenuItem(
                   value: SortActivity.byTime,
-                  child: Text('Time'),
+                  child: CustomText('Time'),
                 ),
                 const PopupMenuItem(
                   value: SortActivity.byMethod,
-                  child: Text('Method'),
+                  child: CustomText('Method'),
                 ),
                 const PopupMenuItem(
                   value: SortActivity.byStatus,
-                  child: Text('Status'),
+                  child: CustomText('Status'),
                 ),
               ];
             },
@@ -171,7 +172,7 @@ class _DashboardPageState extends State<DashboardPage> {
           ),
         ],
         title: !isSearch
-            ? Text('Http Activities', style: TextStyle(color: AppColor.primary))
+            ? CustomText('Http Activities', style: TextStyle(color: AppColor.primary))
             : TextField(
                 style: TextStyle(color: AppColor.primary),
                 autofocus: true,
@@ -203,7 +204,7 @@ class _DashboardPageState extends State<DashboardPage> {
               }
 
               if (filteredActivities.isEmpty) {
-                return const Text('No data');
+                return const CustomText('No data');
               }
 
               return _buildBody(filteredActivities);
@@ -250,64 +251,64 @@ class _DashboardPageState extends State<DashboardPage> {
                   data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
                   child: ExpansionTile(
                     tilePadding: const EdgeInsets.symmetric(horizontal: 16),
-                    title: const Text('Total'),
+                    title: const CustomText('Total'),
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Column(
                             children: [
-                              Text('GET',
+                              CustomText('GET',
                                   style: TextStyle(
                                       color: AppColor.primary,
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold)),
                               SizedBox(height: 5),
-                              Text(_getTotalRequest(filteredActivities, 'get')),
+                              CustomText(_getTotalRequest(filteredActivities, 'get')),
                             ],
                           ),
                           Column(
                             children: [
-                              Text('POST',
+                              CustomText('POST',
                                   style: TextStyle(
                                       color: AppColor.primary,
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold)),
                               SizedBox(height: 5),
-                              Text(_getTotalRequest(filteredActivities, 'post')),
+                              CustomText(_getTotalRequest(filteredActivities, 'post')),
                             ],
                           ),
                           Column(
                             children: [
-                              Text('PUT',
+                              CustomText('PUT',
                                   style: TextStyle(
                                       color: AppColor.primary,
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold)),
                               SizedBox(height: 5),
-                              Text(_getTotalRequest(filteredActivities, 'put')),
+                              CustomText(_getTotalRequest(filteredActivities, 'put')),
                             ],
                           ),
                           Column(
                             children: [
-                              Text('PATCH',
+                              CustomText('PATCH',
                                   style: TextStyle(
                                       color: AppColor.primary,
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold)),
                               SizedBox(height: 5),
-                              Text(_getTotalRequest(filteredActivities, 'patch')),
+                              CustomText(_getTotalRequest(filteredActivities, 'patch')),
                             ],
                           ),
                           Column(
                             children: [
-                              Text('DELETE',
+                              CustomText('DELETE',
                                   style: TextStyle(
                                       color: AppColor.primary,
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold)),
                               SizedBox(height: 5),
-                              Text(_getTotalRequest(filteredActivities, 'delete')),
+                              CustomText(_getTotalRequest(filteredActivities, 'delete')),
                             ],
                           ),
                         ],

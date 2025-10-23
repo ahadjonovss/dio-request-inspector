@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:dio_request_inspector/src/page/dashboard/widget/custom_text.dart';
 import 'package:dio_request_inspector/src/page/resources/app_color.dart';
 import 'package:flutter/material.dart';
 
@@ -40,7 +41,7 @@ class PasswordProtectionDialog extends StatelessWidget {
                         const SizedBox(
                           height: 16,
                         ),
-                        const Text(
+                        const CustomText(
                           'Password Protection',
                           style: TextStyle(
                               color: Colors.black,
@@ -50,7 +51,7 @@ class PasswordProtectionDialog extends StatelessWidget {
                         const SizedBox(
                           height: 16,
                         ),
-                        const Text(
+                        const CustomText(
                           'This page is password protected. Please enter the password to continue.',
                           textAlign: TextAlign.center,
                           style: TextStyle(color: Colors.black, fontSize: 14),
@@ -102,7 +103,7 @@ class PasswordProtectionDialog extends StatelessWidget {
                                 textStyle: const TextStyle(color: Colors.white),
                                 backgroundColor: Colors.white,
                               ),
-                              child: Text('Cancel',
+                              child: CustomText('Cancel',
                                   style: TextStyle(color: AppColor.primary)),
                             ),
                           ),
@@ -124,7 +125,7 @@ class PasswordProtectionDialog extends StatelessWidget {
                                 textStyle: const TextStyle(color: Colors.white),
                                 backgroundColor: AppColor.primary,
                               ),
-                              child: const Text('Submit',
+                              child: const CustomText('Submit',
                                   style: TextStyle(color: Colors.white)),
                             ),
                           ),

@@ -1,5 +1,6 @@
 import 'package:dio_request_inspector/src/common/extensions.dart';
 import 'package:dio_request_inspector/src/common/helpers.dart';
+import 'package:dio_request_inspector/src/page/dashboard/widget/custom_text.dart';
 import 'package:flutter/material.dart';
 
 class ItemColumn extends StatelessWidget {
@@ -34,7 +35,7 @@ class ItemColumn extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(name!, style: const TextStyle(fontWeight: FontWeight.bold)),
+            CustomText(name!, style: const TextStyle(fontWeight: FontWeight.bold)),
             Visibility(
               visible: showCopyButton,
               child: IconButton(
@@ -76,7 +77,7 @@ class ItemColumn extends StatelessWidget {
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(
+                  child: CustomText(
                     value!.isJson ? value!.prettify : value!,
                   ),
                 ),

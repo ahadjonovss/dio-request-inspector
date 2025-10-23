@@ -1,3 +1,4 @@
+import 'package:dio_request_inspector/src/page/dashboard/widget/custom_text.dart';
 import 'package:dio_request_inspector/src/page/resources/app_color.dart';
 import 'package:flutter/material.dart';
 
@@ -62,7 +63,7 @@ class _SearchAppBarState extends State<SearchAppBar> {
               style: TextStyle(color: Colors.black),
               onSubmitted: (value) => widget.onSearch(value),
             )
-          : Text(
+          : CustomText(
               'Detail Activity',
               style: TextStyle(color: AppColor.primary),
             ),

@@ -1,3 +1,4 @@
+import 'package:dio_request_inspector/src/page/dashboard/widget/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:dio_request_inspector/src/common/helpers.dart';
 import 'package:dio_request_inspector/src/model/http_activity.dart';
@@ -44,7 +45,7 @@ class ItemResponseWidget extends StatelessWidget {
           children: [
             Row(
               children: [
-                Text(
+                CustomText(
                   data.method,
                   style: TextStyle(
                     color: AppColor.primary,
@@ -54,7 +55,7 @@ class ItemResponseWidget extends StatelessWidget {
                 ),
                 const SizedBox(width: 8),
                 Expanded(
-                  child: Text(
+                  child: CustomText(
                     data.endpoint,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
@@ -66,25 +67,25 @@ class ItemResponseWidget extends StatelessWidget {
                 ),
               ],
             ),
-            Text(
+            CustomText(
               data.uri,
               style: TextStyle(fontSize: 12, color: AppColor.primary),
             ),
             const Divider(color: Colors.grey, endIndent: 12),
             Row(
               children: [
-                Text(
+                CustomText(
                   data.request?.time != null ? _formatTime(data.request!.time) : 'n/a',
                   style: const TextStyle(fontSize: 12, color: Colors.grey),
                 ),
                 const Spacer(),
-                Text(
+                CustomText(
                   '${Helper.formatBytes(data.request?.size ?? 0)} / '
                   '${Helper.formatBytes(data.response?.size ?? 0)}',
                   style: const TextStyle(fontSize: 12, color: Colors.grey),
                 ),
                 const Spacer(),
-                Text(
+                CustomText(
                   Helper.formatTime(data.duration),
                   style: const TextStyle(fontSize: 12, color: Colors.grey),
                 ),
@@ -116,7 +117,7 @@ class ItemResponseWidget extends StatelessWidget {
       );
     }
 
-    return Text(
+    return CustomText(
       statusCode.toString(),
       style: TextStyle(color: statusColor, fontWeight: FontWeight.bold),
     );
